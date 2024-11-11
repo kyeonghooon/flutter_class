@@ -12,16 +12,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('그리드뷰 위젯 연습'),
+          title: const Text('그리드뷰 위젯 연습'),
         ),
         body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 16,
             mainAxisSpacing: 36,
           ),
           itemCount: 10,
-          itemBuilder: (context, index) {},
+          itemBuilder: (context, index) {
+            return Container(
+              color: Colors.blueGrey,
+              child: Text('index number : $index'),
+            );
+          },
         ),
       ),
     );
